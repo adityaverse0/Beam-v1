@@ -1,0 +1,197 @@
+Beam UI & Branding Refactor Prompt
+
+You are a senior Flutter engineer, UX designer, and code refactoring expert.
+
+You are working on a fork of LocalSend. Your task is to transform it into a new application called Beam.
+
+Critical Requirements
+
+- Do NOT rewrite the networking, encryption, transfer protocol, or core business logic unless absolutely necessary.
+- Do NOT change APIs or functionality.
+- Do NOT introduce regressions.
+- Preserve all existing features and behavior.
+- Refactor incrementally.
+- After every change, ensure the project still compiles.
+- Keep commits logically separated.
+- Preserve upstream architecture as much as possible for easier future updates.
+
+---
+
+Goal
+
+Create a premium, modern, minimal, elegant application called Beam.
+
+The design should feel comparable to the best modern Android apps.
+
+Think:
+
+- Material 3
+- Google Pixel UI
+- Nothing OS
+- Linear
+- Arc Browser
+- Minimal Apple design
+
+The UI must be clean, lightweight, spacious, polished, and fast.
+
+---
+
+Branding
+
+Rename every user-facing reference from LocalSend to Beam.
+
+Update:
+
+- App name
+- Window titles
+- Package display names
+- Splash screen
+- About page
+- Settings
+- Notifications
+- App launcher name
+- README
+- Documentation
+- Comments where appropriate
+
+Do NOT rename identifiers that would break compatibility unless required.
+
+Avoid unnecessary refactoring.
+
+---
+
+Visual Identity
+
+Primary color:
+Blue (#3B82F6)
+
+Accent:
+Cyan
+
+Support full Material You dynamic colors on Android 12+.
+
+Use rounded corners.
+
+Large comfortable spacing.
+
+Beautiful animations.
+
+Elegant typography.
+
+Minimal shadows.
+
+Modern icons.
+
+Smooth transitions.
+
+---
+
+UI Improvements
+
+Redesign every screen while preserving functionality.
+
+Improve:
+
+- Home
+- Send
+- Receive
+- Device discovery
+- Transfer progress
+- Settings
+- About
+- History
+- Error dialogs
+- Empty states
+
+Requirements:
+
+- Better hierarchy
+- Better spacing
+- Better alignment
+- Better animations
+- Better loading indicators
+- Better buttons
+- Better cards
+- Better typography
+
+No clutter.
+
+No unnecessary visual noise.
+
+---
+
+User Experience
+
+Improve usability.
+
+Reduce taps.
+
+Improve navigation.
+
+Improve accessibility.
+
+Support:
+
+- Phones
+- Tablets
+- Foldables
+- Desktop
+
+Responsive layouts.
+
+---
+
+Performance
+
+Avoid unnecessary rebuilds.
+
+Avoid expensive widgets.
+
+Keep animations at 60fps.
+
+Reduce memory usage where possible.
+
+---
+
+Code Quality
+
+Improve only where safe.
+
+Follow Flutter best practices.
+
+Use reusable widgets.
+
+Reduce duplicated code.
+
+Do not change networking architecture.
+
+Do not change transfer protocol.
+
+Do not change encryption.
+
+Do not change discovery logic.
+
+Do not change file transfer logic.
+
+---
+
+Maintainability
+
+Keep the project easy to merge with future upstream LocalSend updates.
+
+Avoid massive rewrites.
+
+Document every significant change.
+
+---
+
+Final Verification
+
+Before finishing:
+
+- Ensure the project builds successfully.
+- Ensure no existing functionality is broken.
+- Ensure every transfer feature still works.
+- Ensure branding is consistently changed to Beam.
+- Ensure the UI is modern, minimal, responsive, and polished.
+- Provide a summary of every modified file and explain why it was changed.
