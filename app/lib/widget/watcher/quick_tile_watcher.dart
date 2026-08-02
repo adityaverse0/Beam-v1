@@ -46,7 +46,7 @@ class _QuickTileWatcherState extends State<QuickTileWatcher> with Refena {
     }
   }
 
-  void _syncTileState(Ref ref) {
+  void _syncTileState(WatchableRef ref) {
     final nearbyState = ref.watch(nearbyDevicesProvider);
     final sendSessions = ref.watch(sendProvider);
     final serverSession = ref.watch(serverProvider.select((s) => s?.session));

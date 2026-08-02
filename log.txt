@@ -1,0 +1,69 @@
+run flutter build apk --split-per-abi
+Running Gradle task 'assembleRelease'...                        
+lib/pages/quick_beam_page.dart:240:10: Error: Type 'FavoriteEntry' not found.
+    List<FavoriteEntry> favoriteDevices,
+         ^^^^^^^^^^^^^
+lib/pages/quick_beam_page.dart:241:10: Error: Type 'CrossFile' not found.
+    List<CrossFile> selectedFiles,
+         ^^^^^^^^^
+lib/widget/watcher/quick_tile_watcher.dart:50:29: Error: The method 'watch' isn't defined for the type 'Ref'.
+ - 'Ref' is from 'package:refena/src/ref.dart' ('/home/runner/.pub-cache/hosted/pub.dev/refena-3.2.2/lib/src/ref.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'watch'.
+    final nearbyState = ref.watch(nearbyDevicesProvider);
+                            ^^^^^
+lib/widget/watcher/quick_tile_watcher.dart:51:30: Error: The method 'watch' isn't defined for the type 'Ref'.
+ - 'Ref' is from 'package:refena/src/ref.dart' ('/home/runner/.pub-cache/hosted/pub.dev/refena-3.2.2/lib/src/ref.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'watch'.
+    final sendSessions = ref.watch(sendProvider);
+                             ^^^^^
+lib/widget/watcher/quick_tile_watcher.dart:52:31: Error: The method 'watch' isn't defined for the type 'Ref'.
+ - 'Ref' is from 'package:refena/src/ref.dart' ('/home/runner/.pub-cache/hosted/pub.dev/refena-3.2.2/lib/src/ref.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'watch'.
+    final serverSession = ref.watch(serverProvider.select((s) => s?.session));
+                              ^^^^^
+lib/pages/quick_beam_page.dart:240:10: Error: 'FavoriteEntry' isn't a type.
+    List<FavoriteEntry> favoriteDevices,
+         ^^^^^^^^^^^^^
+lib/pages/quick_beam_page.dart:241:10: Error: 'CrossFile' isn't a type.
+    List<CrossFile> selectedFiles,
+         ^^^^^^^^^
+lib/pages/quick_beam_page.dart:328:111: Error: The getter 'size' isn't defined for the type 'Object?'.
+ - 'Object' is from 'dart:core'.
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'size'.
+                      '${selectedFiles.length} file(s) selected (${selectedFiles.fold<int>(0, (p, c) => p + c.size).asReadableFileSize})',
+                                                                                          ^^^^
+lib/pages/quick_beam_page.dart:328:107: Error: A value of type 'num' can't be returned from a function with return type 'int'.
+                      '${selectedFiles.length} file(s) selected (${selectedFiles.fold<int>(0, (p, c) => p + c.size).asReadableFileSize})',
+                                                                                          ^
+lib/pages/quick_beam_page.dart:335:43: Error: The getter 'clear' isn't defined for the type 'Translations$general$en'.
+ - 'Translations$general$en' is from 'package:localsend_app/gen/strings.g.dart' ('lib/gen/strings.g.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'clear'.
+                    child: Text(t.general.clear),
+                                          ^^^^^
+lib/pages/quick_beam_page.dart:444:84: Error: Required named parameter 'background' must be provided.
+                                      await ref.notifier(sendProvider).startSession(
+                                                                                   ^
+lib/pages/quick_beam_page.dart:495:20: Error: The getter 'notificationStrings' isn't defined for the type '_QuickBeamPageState'.
+ - '_QuickBeamPageState' is from 'package:localsend_app/pages/quick_beam_page.dart' ('lib/pages/quick_beam_page.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'notificationStrings'.
+          strings: notificationStrings,
+                   ^^^^^^^^^^^^^^^^^^^
+Target kernel_snapshot_program failed: Exception
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileFlutterBuildRelease'.
+> Process 'command '/opt/hostedtoolcache/flutter/stable-3.41.9-x64/flutter/bin/flutter'' finished with non-zero exit value 1
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 4m 8s
+Running Gradle task 'assembleRelease'...                          249.6s
+Gradle task assembleRelease failed with exit code 1
+Error: Process completed with exit code 1.

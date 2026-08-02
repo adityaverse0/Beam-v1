@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:localsend_app/config/theme.dart';
 import 'package:localsend_app/gen/strings.g.dart';
+import 'package:localsend_app/model/cross_file.dart';
+import 'package:localsend_app/model/persistence/favorite_device.dart';
 import 'package:localsend_app/model/send_mode.dart';
 import 'package:localsend_app/provider/animation_provider.dart';
 import 'package:localsend_app/provider/favorites_provider.dart';
@@ -19,6 +21,7 @@ import 'package:localsend_app/provider/settings_provider.dart';
 import 'package:localsend_app/util/device_type_ext.dart';
 import 'package:localsend_app/util/favorites.dart';
 import 'package:localsend_app/util/native/file_picker.dart';
+import 'package:localsend_app/util/notification_strings.dart';
 import 'package:localsend_isolates/model/device.dart';
 import 'package:localsend_isolates/model/session_status.dart';
 import 'package:localsend_isolates/util/file_size_helper.dart';
@@ -237,7 +240,7 @@ class _QuickBeamPageState extends State<QuickBeamPage> with TickerProviderStateM
   Widget _buildDiscoveryView(
     BuildContext context,
     List<Device> nearbyDevices,
-    List<FavoriteEntry> favoriteDevices,
+    List<FavoriteDevice> favoriteDevices,
     List<CrossFile> selectedFiles,
     Color primaryColor,
     bool animationsEnabled,
@@ -332,7 +335,7 @@ class _QuickBeamPageState extends State<QuickBeamPage> with TickerProviderStateM
                   ),
                   TextButton(
                     onPressed: () => ref.redux(selectedSendingFilesProvider).dispatch(ClearSelectionAction()),
-                    child: Text(t.general.clear),
+                    child: Text(t.selectedFilesPage.deleteAll),
                   ),
                 ],
               ),
@@ -440,12 +443,13 @@ class _QuickBeamPageState extends State<QuickBeamPage> with TickerProviderStateM
                                       }
                                     }
 
-                                    if (ref.read(selectedSendingFilesProvider).isNotEmpty) {
-                                      await ref.notifier(sendProvider).startSession(
-                                            target: device,
-                                            files: ref.read(selectedSendingFilesProvider),
-                                          );
-                                    }
+                                      if (ref.read(selectedSendingFilesProvider).isNotEmpty) {
+                                        await ref.notifier(sendProvider).startSession(
+                                              target: device,
+                                              files: ref.read(selectedSendingFilesProvider),
+                                              background: false,
+                                            );
+                                      }
                                   },
                                 ),
                               ),
