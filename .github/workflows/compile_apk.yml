@@ -63,10 +63,9 @@ jobs:
           flutter-version: ${{ env.FLUTTER_VERSION }}
 
       - name: Install Rust
-        uses: actions-rs/toolchain@v1
+        uses: dtolnay/rust-toolchain@stable
         with:
-          toolchain: stable
-          override: ${{ env.RUST_VERSION }}
+          toolchain: ${{ env.RUST_VERSION }}
 
       - name: Dependencies
         working-directory: ${{ env.APK_BUILD_DIR }}/app

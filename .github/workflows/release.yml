@@ -63,10 +63,9 @@ jobs:
           flutter-version: ${{ env.FLUTTER_VERSION }}
 
       - name: Install Rust
-        uses: actions-rs/toolchain@v1
+        uses: dtolnay/rust-toolchain@stable
         with:
-          toolchain: stable
-          override: ${{ env.RUST_VERSION }}
+          toolchain: ${{ env.RUST_VERSION }}
 
       - name: Check rust-toolchain.toml
         working-directory: ${{ env.APK_BUILD_DIR }}/packages/localsend_isolates
@@ -107,10 +106,9 @@ jobs:
           channel: "stable"
 
       - name: Install Rust
-        uses: actions-rs/toolchain@v1
+        uses: dtolnay/rust-toolchain@stable
         with:
-          toolchain: stable
-          override: ${{ env.RUST_VERSION }}
+          toolchain: ${{ env.RUST_VERSION }}
 
       - name: Check rust-toolchain.toml
         working-directory: packages/localsend_isolates
@@ -186,10 +184,9 @@ jobs:
           channel: "stable"
 
       - name: Install Rust
-        uses: actions-rs/toolchain@v1
+        uses: dtolnay/rust-toolchain@stable
         with:
-          toolchain: stable
-          override: ${{ env.RUST_VERSION }}
+          toolchain: ${{ env.RUST_VERSION }}
 
       - name: Check rust-toolchain.toml
         working-directory: packages/localsend_isolates
@@ -286,10 +283,9 @@ jobs:
           channel: "stable"
 
       - name: Install Rust
-        uses: actions-rs/toolchain@v1
+        uses: dtolnay/rust-toolchain@stable
         with:
-          toolchain: stable
-          override: ${{ env.RUST_VERSION }}
+          toolchain: ${{ env.RUST_VERSION }}
 
       - name: Check rust-toolchain.toml
         working-directory: packages/localsend_isolates
