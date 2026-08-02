@@ -69,14 +69,18 @@
                 <data android:mimeType="*/*" />
             </intent-filter>
 
+            <!-- Quick settings tile preferences (long press) -->
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
+            </intent-filter>
+
         </activity>
 
         <!-- Quick tile to launch the app -->
         <service
             android:name=".QuickTileService"
             android:icon="@mipmap/ic_launcher_quicktile_foreground"
-            android:label="LocalSend"
-            android:process=":quick_tile_service"
+            android:label="Beam"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
             android:exported="true"
             tools:targetApi="24">

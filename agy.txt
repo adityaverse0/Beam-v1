@@ -1,197 +1,88 @@
-Beam UI & Branding Refactor Prompt
+Build a Premium Android Quick Settings Tile for Beam (LocalSend Fork)
 
-You are a senior Flutter engineer, UX designer, and code refactoring expert.
-
-You are working on a fork of LocalSend. Your task is to transform it into a new application called Beam.
-
-Critical Requirements
-
-- Do NOT rewrite the networking, encryption, transfer protocol, or core business logic unless absolutely necessary.
-- Do NOT change APIs or functionality.
-- Do NOT introduce regressions.
-- Preserve all existing features and behavior.
-- Refactor incrementally.
-- After every change, ensure the project still compiles.
-- Keep commits logically separated.
-- Preserve upstream architecture as much as possible for easier future updates.
-
----
+Create a native Android feature for my app "Beam" (a fork of LocalSend).
 
 Goal
 
-Create a premium, modern, minimal, elegant application called Beam.
+When the user taps the Beam tile in Android Quick Settings, it should feel like a premium system feature.
 
-The design should feel comparable to the best modern Android apps.
+Requirements
 
-Think:
+Quick Settings Tile
 
-- Material 3
-- Google Pixel UI
-- Nothing OS
-- Linear
-- Arc Browser
-- Minimal Apple design
+- Implement using Android "TileService".
+- Tile states:
+  - Idle
+  - Searching
+  - Connected
+  - Transferring
+- Update icon and label according to state.
+- Long press opens Beam settings.
+- Tap starts Beam instantly without delay.
 
-The UI must be clean, lightweight, spacious, polished, and fast.
+Launch Animation
 
----
+When the tile is tapped:
 
-Branding
+- Expand into a full-screen overlay.
+- Apply a soft background blur if supported.
+- Use spring-based Material animations.
+- Add subtle haptic feedback.
+- Animate at 60–120 FPS where possible.
 
-Rename every user-facing reference from LocalSend to Beam.
+Discovery Screen
 
-Update:
+Instead of a simple loading spinner:
 
-- App name
-- Window titles
-- Package display names
-- Splash screen
-- About page
-- Settings
-- Notifications
-- App launcher name
-- README
-- Documentation
-- Comments where appropriate
+- Animated radar scan.
+- Floating particles.
+- Pulsing center circle.
+- Animated "Searching for nearby devices..."
+- Device cards fade and slide into view.
+- Smooth transitions throughout.
 
-Do NOT rename identifiers that would break compatibility unless required.
+Transfer Screen
 
-Avoid unnecessary refactoring.
+- Circular progress ring.
+- Live transfer speed.
+- Remaining time.
+- Animated file icon.
+- Device avatar.
+- Pause, resume, and cancel controls.
 
----
+Success Animation
 
-Visual Identity
+- Progress ring morphs into a checkmark.
+- Gentle particle burst.
+- Success haptic.
+- Automatically dismiss after a short delay.
 
-Primary color:
-Blue (#3B82F6)
+UI Design
 
-Accent:
-Cyan
-
-Support full Material You dynamic colors on Android 12+.
-
-Use rounded corners.
-
-Large comfortable spacing.
-
-Beautiful animations.
-
-Elegant typography.
-
-Minimal shadows.
-
-Modern icons.
-
-Smooth transitions.
-
----
-
-UI Improvements
-
-Redesign every screen while preserving functionality.
-
-Improve:
-
-- Home
-- Send
-- Receive
-- Device discovery
-- Transfer progress
-- Settings
-- About
-- History
-- Error dialogs
-- Empty states
-
-Requirements:
-
-- Better hierarchy
-- Better spacing
-- Better alignment
-- Better animations
-- Better loading indicators
-- Better buttons
-- Better cards
-- Better typography
-
-No clutter.
-
-No unnecessary visual noise.
-
----
-
-User Experience
-
-Improve usability.
-
-Reduce taps.
-
-Improve navigation.
-
-Improve accessibility.
-
-Support:
-
-- Phones
-- Tablets
-- Foldables
-- Desktop
-
-Responsive layouts.
-
----
+- Minimal.
+- Modern.
+- Material 3.
+- Rounded corners.
+- Dynamic color support.
+- Dark and light themes.
+- Smooth motion everywhere.
+- No lag or frame drops.
 
 Performance
 
-Avoid unnecessary rebuilds.
+- Do not block the UI thread.
+- Use coroutines for background work.
+- Optimize animations for low-end devices.
+- Keep battery usage low.
 
-Avoid expensive widgets.
+Compatibility
 
-Keep animations at 60fps.
+- Android 8.0+.
+- Works as a normal app.
+- No root required.
+- No custom ROM required.
+- No system privileges required.
 
-Reduce memory usage where possible.
+Important
 
----
-
-Code Quality
-
-Improve only where safe.
-
-Follow Flutter best practices.
-
-Use reusable widgets.
-
-Reduce duplicated code.
-
-Do not change networking architecture.
-
-Do not change transfer protocol.
-
-Do not change encryption.
-
-Do not change discovery logic.
-
-Do not change file transfer logic.
-
----
-
-Maintainability
-
-Keep the project easy to merge with future upstream LocalSend updates.
-
-Avoid massive rewrites.
-
-Document every significant change.
-
----
-
-Final Verification
-
-Before finishing:
-
-- Ensure the project builds successfully.
-- Ensure no existing functionality is broken.
-- Ensure every transfer feature still works.
-- Ensure branding is consistently changed to Beam.
-- Ensure the UI is modern, minimal, responsive, and polished.
-- Provide a summary of every modified file and explain why it was changed.
+Do NOT modify or break LocalSend's transfer protocol or networking logic. Only enhance the Android UI, Quick Settings integration, animations, and user experience while keeping all existing functionality intact.

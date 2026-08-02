@@ -42,7 +42,7 @@ class TranslationsBg extends Translations with BaseTranslations<AppLocale, Trans
   @override
   String get locale => 'Български';
   @override
-  String get appName => 'LocalSend';
+  String get appName => 'Beam';
   @override
   late final _Translations$general$bg general = _Translations$general$bg._(_root);
   @override
@@ -281,7 +281,7 @@ class _Translations$networkInterfacesPage$bg extends Translations$networkInterfa
   String get title => 'Мрежови интерфейси';
   @override
   String get info =>
-      'По подразбиране, LocalSend използва всички налични мрежови интерфейси. Тук можете да изключите нежелани мрежи. Трябва да рестартирате сървъра, за да приложите промените.';
+      'По подразбиране, Beam използва всички налични мрежови интерфейси. Тук можете да изключите нежелани мрежи. Трябва да рестартирате сървъра, за да приложите промените.';
   @override
   String get preview => 'Преглед';
   @override
@@ -370,7 +370,7 @@ class _Translations$receiveOptionsPage$bg extends Translations$receiveOptionsPag
   @override
   String get destination => _root.settingsTab.receive.destination;
   @override
-  String get appDirectory => '(папка на LocalSend)';
+  String get appDirectory => '(папка на Beam)';
   @override
   String get saveToGallery => _root.settingsTab.receive.saveToGallery;
   @override
@@ -449,7 +449,7 @@ class _Translations$webSharePage$bg extends Translations$webSharePage$en {
   @override
   String pinHint({required Object pin}) => 'ПИН кодът е „${pin}“';
   @override
-  String get encryptionHint => 'LocalSend използва самоподписан сертификат. Трябва да го приемете във вашия браузър.';
+  String get encryptionHint => 'Beam използва самоподписан сертификат. Трябва да го приемете във вашия браузър.';
   @override
   String pendingRequests({required Object n}) => 'Чакащи заявки: ${n}';
 }
@@ -462,10 +462,10 @@ class _Translations$aboutPage$bg extends Translations$aboutPage$en {
 
   // Translations
   @override
-  String get title => 'Относно LocalSend';
+  String get title => 'Относно Beam';
   @override
   List<String> get description => [
-    'LocalSend е безплатно приложение с отворен код, което ви позволява сигурно да споделяте файлове и съобщения с устройства наблизо през вашата локална мрежа, без да се нуждаете от интернет връзка.',
+    'Beam е безплатно приложение с отворен код, което ви позволява сигурно да споделяте файлове и съобщения с устройства наблизо през вашата локална мрежа, без да се нуждаете от интернет връзка.',
     'Това приложение е достъпно за Android, iOS, macOS, Windows и Linux. Можете да намерите всички опции за изтегляне на официалната домашна страница.',
   ];
   @override
@@ -489,7 +489,7 @@ class _Translations$donationPage$bg extends Translations$donationPage$en {
   String get title => 'Дарение';
   @override
   String get info =>
-      'LocalSend е безплатен, с отворен код и без никакви реклами. Ако харесвате приложението, можете да подкрепите разработката с дарение.';
+      'Beam е безплатен, с отворен код и без никакви реклами. Ако харесвате приложението, можете да подкрепите разработката с дарение.';
   @override
   String donate({required Object amount}) => 'Дарение ${amount}';
   @override
@@ -592,7 +592,7 @@ class _Translations$tray$bg extends Translations$tray$en {
   @override
   String get open => _root.general.open;
   @override
-  String get close => 'Излезте от LocalSend';
+  String get close => 'Излезте от Beam';
   @override
   String get closeWindows => 'Изход';
 }
@@ -803,7 +803,7 @@ class _Translations$settingsTab$general$bg extends Translations$settingsTab$gene
   @override
   String get launchMinimized => 'Автоматично стартиране: Стартирай скрито';
   @override
-  String get showInContextMenu => 'Покажи LocalSend в контекстното меню';
+  String get showInContextMenu => 'Покажи Beam в контекстното меню';
   @override
   String get animations => 'Анимации';
 }
@@ -901,7 +901,7 @@ class _Translations$settingsTab$other$bg extends Translations$settingsTab$other$
   @override
   String get title => 'Други';
   @override
-  String get support => 'Поддръжка на LocalSend';
+  String get support => 'Поддръжка на Beam';
   @override
   String get donate => 'Дарение';
   @override
@@ -1211,7 +1211,7 @@ class _Translations$dialogs$localNetworkUnauthorized$bg extends Translations$dia
   String get title => _root.dialogs.noPermission.title;
   @override
   String get description =>
-      'LocalSend не може да намери други устройства без разрешение за сканиране на локалната мрежа. Моля, предоставете това разрешение в настройките.';
+      'Beam не може да намери други устройства без разрешение за сканиране на локалната мрежа. Моля, предоставете това разрешение в настройките.';
   @override
   String get gotoSettings => 'Настройки';
 }
@@ -1353,7 +1353,7 @@ class _Translations$dialogs$sendModeHelp$bg extends Translations$dialogs$sendMod
   @override
   String get multiple => 'Изпраща файлове до множество получатели. Изборът няма да бъде изчистен след приключване на прехвърлянето на файлове.';
   @override
-  String get link => 'Получателите, които нямат инсталиран LocalSend, могат да изтеглят избраните файлове, като отворят връзката в своя браузър.';
+  String get link => 'Получателите, които нямат инсталиран Beam, могат да изтеглят избраните файлове, като отворят връзката в своя браузър.';
 }
 
 // Path: dialogs.zoom

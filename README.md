@@ -1,4 +1,4 @@
-# LocalSend
+# Beam
 
 [![CI status][ci-badge]][ci-workflow]
 [![Translations][translate-badge]][translate-link]
@@ -20,7 +20,7 @@
 [github]: https://github.com/localsend/localsend
 [codeberg]: https://codeberg.org/localsend/localsend
 
-LocalSend is a free, open-source app that allows you to securely share files and messages with nearby devices over your local network without needing an internet connection.
+Beam is a free, open-source app that allows you to securely share files and messages with nearby devices over your local network without needing an internet connection.
 
 - [About](#about)
 - [Screenshots](#screenshots)

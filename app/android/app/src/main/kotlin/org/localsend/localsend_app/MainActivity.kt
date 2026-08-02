@@ -22,6 +22,8 @@ private const val REQUEST_CODE_PICK_FILE = 3
 
 class MainActivity : FlutterActivity() {
     private var pendingResult: MethodChannel.Result? = null
+    private var methodChannel: MethodChannel? = null
+    private var isLaunchFromQuickTile: Boolean = false
 
     // Overriding the static methods we need from the Java class, as described
     // in the documentation of `FlutterActivity.NewEngineIntentBuilder`
@@ -35,13 +37,53 @@ class MainActivity : FlutterActivity() {
         }
     }
 
+    override fun onCreate(savedInstanceState: android.os.Bundle?) {
+        checkQuickTileIntent(intent)
+        super.onCreate(savedInstanceState)
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        checkQuickTileIntent(intent)
+        if (isLaunchFromQuickTile) {
+            methodChannel?.invokeMethod("onQuickBeamLaunched", null)
+        }
+    }
+
+    private fun checkQuickTileIntent(intent: Intent?) {
+        if (intent != null) {
+            val action = intent.action
+            val isExtra = intent.getBooleanExtra(QuickTileService.EXTRA_QUICK_BEAM, false)
+            if (action == QuickTileService.ACTION_QUICK_BEAM || isExtra) {
+                isLaunchFromQuickTile = true
+            }
+        }
+    }
+
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
-        MethodChannel(
+        val channel = MethodChannel(
             flutterEngine.dartExecutor.binaryMessenger,
             CHANNEL
-        ).setMethodCallHandler { call, result ->
+        )
+        methodChannel = channel
+
+        channel.setMethodCallHandler { call, result ->
             when (call.method) {
+                "updateQuickTileState" -> {
+                    val state = call.argument<String>("state") ?: "idle"
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        QuickTileService.updateTileState(context, state)
+                    }
+                    result.success(null)
+                }
+
+                "checkLaunchFromTile" -> {
+                    val launched = isLaunchFromQuickTile
+                    isLaunchFromQuickTile = false
+                    result.success(launched)
+                }
+
                 "pickDirectory" -> {
                     pendingResult = result
                     openDirectoryPicker(onlyPath = false)
